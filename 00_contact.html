@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Send me a message</title>
+  <link rel="stylesheet" href="00_General.css">
+  <link rel="stylesheet" href="00_contact.css">
+</head>
+
+<!-- link functions elsewhere -->
+<script src="00_homepage.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+<!-- link functions elsewhere -->
+
+<body class="contact-page"> <!-- Added unique class -->
+    <canvas id="particle-bg"></canvas>
+    
+    <div class="content-wrapper">
+
+      <header class="Header">
+          <!-- <h0>Hi, I'm Jinyun!</h0> -->
+          <!-- <p>A beginner web developer</p> -->
+          
+          <!-- Link to another page -->
+          <nav>
+              <ul class="nav-links">
+                <li><a href="00_homepage.html">Home</a></li>
+                <li><a href="00_projects.html">Projects</a></li>
+                <li><a href="00_contact.html">Send a message</a></li>
+              </ul>
+          </nav>
+      </header>
+
+      <!-- top_img -->
+      <section class="top_img">
+              <img src="imgs/mountain.jpg" alt="Background Image"> 
+      </section>
+
+    <section>
+      <main class="contact-container"> <!-- Added unique container -->
+        <form id="contactForm" action="https://formspree.io/f/mnnpbyjd" method="POST">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" 
+                  minlength="2" maxlength="50" 
+                  pattern="[A-Za-z ]+" 
+                  title="Letters and spaces only"
+                  required>
+            <div class="error-message" id="name-error"></div>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="_replyto" 
+                  required>
+            <div class="error-message" id="email-error"></div>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" 
+                      minlength="10" maxlength="1000" 
+                      required></textarea>
+            <div class="error-message" id="message-error"></div>
+          </div>
+
+          <!-- Updated redirect solution--- not working 250331--> 
+          <!-- <input type="hidden" name="_next" value="Homepage.html"> -->
+          <!-- OR for absolute path -->
+          <!-- <input type="hidden" name="_next" value="http://127.0.0.1:5500/Homepage.html"> -->
+          <!-- <input type="hidden" name="_next" value="https://forum.image.sc/"> -->
+      
+          <button type="submit">Send Message</button>
+        </form>
+      </main>
+    </section>
+  </div>
+
+  <script src="particles.js" defer></script> <!-- 'defer' ensures DOM is ready -->
+
+</body>
+
+<!-- link functions elsewhere -->
+<script src="00_contact.js"></script>
+<!-- link functions elsewhere -->
+</html>
+
+<!-- Validation Types Included:
+Field	Validation
+Name	- Required
+- Letters/spaces only
+- 2-50 characters
+Email	- Required
+- Valid email format
+Message	- Required
+- Min 10 characters
+- Max 500 characters -->

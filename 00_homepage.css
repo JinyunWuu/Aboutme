@@ -1,0 +1,286 @@
+
+.profile {
+  position: relative; /* Changed from static */
+  top: 100px;
+  background-color: #00253c;
+  color: white;
+  z-index: 3; /* Higher z-index will make it appear on top */
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); */
+  width: 350px;
+  padding: 40px 0; /* Adds 20px margins on left/right */
+  margin-left: 150px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 300px;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0px;
+
+  /*flex: 0.5; /* Flexible width */
+  min-width: 300px; /* Minimum width before wrapping */
+  max-width: 700px; /* Maximum width */
+
+  height: 1250px;  
+}
+
+
+
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Adds space between image and "About Me" */
+  margin: 0 auto;    /* Centers the entire section horizontally */
+  padding-bottom: 30px; /* Space between content and line */
+  margin-top: 20px; /* Space after the line */
+  margin-bottom: 10px; /* Space after the line */
+  position: relative; /* Needed for pseudo-element positioning */
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  transform: rotate(-30deg); /* Adjust the degree as needed */
+    /* Optional: to maintain layout */
+  filter: brightness(1.2); /* Adjust value between 1-2 for desired brightness */
+}
+
+
+.profile p {
+  font-size: 1.2rem; /* Slightly larger than body text */
+  line-height: 1.7; /* More breathing room */
+}
+
+
+
+/* Timeline items ********************************************/
+.education-timeline {
+  position: relative;
+  padding-left: 30px;
+  margin-top: 30px;
+  margin-bottom: 0px
+}
+
+/* Vertical line */
+.education-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 8px; /* Thicker line */
+  background: #ccc; /* Dark gray color */
+  border-radius: 5px;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 5px;
+  margin-bottom: 50px;
+}
+
+/* Dots */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -2px; /* Half of line width to center */
+  top: 12px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ccc; /* Same as line */
+  /* box-shadow: 0 0 0 2px #666; Matches line */
+  z-index: 1;
+}
+
+/* Content */
+.timeline-content {
+  padding-left: 20px;
+}
+
+
+.timeline-content h3,
+.Email h3{
+  margin: 0 0 5px 0;
+  font-size: 1.3rem;
+}
+
+.timeline-content p,
+.Email p {
+  margin: 0 0 5px 0;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+/* Add this to your existing styles */
+.education{
+  position: relative;
+  padding-bottom: 0px; /* Space for the dotted line */
+  padding-top: 30px; /* Space for the dotted line */
+  margin-bottom: 0px;
+}
+
+/* Matching dotted line below timeline */
+.education::after {
+  content: '';
+  display: block;
+  width: 80%;
+  border-bottom: 2px dotted #ccc;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.education::before {
+  content: '';
+  display: block;
+  width: 80%;
+  border-bottom: 2px dotted #ccc;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Timeline items ********************************************/
+.Email{
+  position: relative;
+  left: 65px;
+  padding-left:0px;
+  margin-top: 40px;
+  margin-left: 0;
+  text-align: left;
+  margin-bottom: 0px;
+  width: 100%; /* Take full width of parent */
+}
+/* Container for both sections */
+
+/* Link styling */
+a {
+  color: white;
+  margin: 0 0px 0;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  /* text-decoration: none; Removes default underline */
+}
+
+
+
+/* Main flex container */
+.container {
+  display: flex;
+  flex-direction: row; /* Side-by-side layout */
+  flex-wrap: wrap; /* Allows responsive wrapping */
+  justify-content: center; /* Centers columns */
+  gap: 80px; /* Space between columns */
+  max-width: 90%;
+  margin: 0 20px;
+  padding: 20px;
+}
+
+
+
+/* New right section */
+.right-column {
+  flex: 1; /* Smaller width for right column */
+  display: flex;
+  position: relative;
+  top: 285px;
+  flex-direction: column;
+  z-index: 3;
+  /* background: #376694;  */
+  gap: 30px; /* Space between right sections */
+  height: auto;
+}
+
+.Hello {
+
+  padding: 20px;
+  margin: 0px;
+  /* background: #00253c;   */
+  border-radius: 8px;
+}
+
+.Skills,
+.Publications{
+  font-size: 1rem;
+  padding: 20px;
+  margin: 0px;
+  background: #00253c;  
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 40px
+}
+
+.Skills {
+  transition: all 0.3s ease;
+}
+
+/* Header Styles */
+.Skills-header {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 10px;
+  position: relative; /* For absolute positioning */
+  padding-right: 40px; /* Space for icon */
+}
+
+/* Triangle Icon */
+.toggle-icon {
+  margin-left: 20px; 
+  font-size: 1em;
+  color: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+.Skills-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding-left: 0px;
+}
+
+
+/* Expanded State */
+.expanded .toggle-icon {
+  transform: rotate(90deg);
+}
+
+.Skills.expanded .Skills-content {
+  max-height: 3000px; 
+  padding-top: 15px;
+}
+
+
+
+/* List Styles */
+.Skills-content ul {
+  margin: 0px 0 0 0;
+  padding-left: 0px;
+  list-style-type: none;
+}
+
+.Skills-content li {
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 15px;
+}
+
+.Skills-content li:not(.section-title)::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #ffffff;
+}
+
+.Skills-content li.section-title {
+  padding-left: 0; /* Remove padding-left for section-title */
+}
